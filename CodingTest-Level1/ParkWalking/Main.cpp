@@ -28,34 +28,80 @@ vector<int> solution(vector<string> park, vector<string> routes) {
         switch (routes[i][0]) {
         case 'N':
             // 북쪽
-            x -= (routes[i][2] - '0');
+            //x -= (routes[i][2] - '0');
+
+            // 장애물 만남
+            for (int j = 0; j < routes[j][2] - '0'; j++) {
+
+                x--;
+                if(park[x][y]=='X' ||
+                    ((x < 0 || x >= w) || (y < 0 || y >= h))){
+                    x = startX;
+                    y = startY;
+                    break;;
+
+                }
+            }
             break;
         case 'S':
             // 남쪽
-            x += (routes[i][2] - '0');
+           // x += (routes[i][2] - '0');
+
+            // 장애물 만남
+            for (int j = 0; j < routes[j][2] - '0'; j++) {
+
+                x++;
+                if (park[x][y] == 'X' ||
+                    ((x < 0 || x >= w) || (y < 0 || y >= h))) {
+                    x = startX;
+                    y = startY;
+                    break;;
+
+                }
+            }
+
             break;
         case 'W':
             // 서쪽
-            y -= (routes[i][2] - '0');
+            //y -= (routes[i][2] - '0');
+
+            // 장애물 만남
+            for (int j = 0; j < routes[j][2] - '0'; j++) {
+
+                y--;
+                if (park[x][y] == 'X' ||
+                    ((x < 0 || x >= w) || (y < 0 || y >= h))) {
+                    x = startX;
+                    y = startY;
+                    break;;
+
+                }
+            }
+
             break;
         case 'E':
             // 동쪽
-            y += (routes[i][2]-'0');
+//            y += (routes[i][2] - '0');
+
+            // 장애물 만남 || 범위 벗어남
+            for (int j = 0; j < routes[j][2] - '0'; j++) {
+                y++;
+                if (park[x][y] == 'X' ||
+                    ((x < 0 || x >= w) || (y < 0 || y >= h))
+                    ) {
+                    x = startX;
+                    y = startY;
+                    break;;
+                }
+            }
             break;
         }
 
-        if (park[x][y] == 'X') {
-            continue;
-        }
-
-        if ((x < 0 || x >= w) || (y < 0 || y >= h)) {   // 범위를 벗어남
-            continue;
-        }
         startX = x, startY = y;
-        answer.push_back(startX+x);
-        answer.push_back(startY+y);
     }
 
+    answer.push_back(x);
+    answer.push_back(y);
     return answer;
 }
 
@@ -63,23 +109,35 @@ int main() {
     vector<string> park;
     vector<string> routes;
 
-    park.push_back("SOO");
-    park.push_back("OOO");
-    park.push_back("OOO");
+    //park.push_back("SOO");
+    //park.push_back("OOO");
+    //park.push_back("OOO");
 
     routes.push_back("E 2");
     routes.push_back("S 2");
     routes.push_back("W 1");
 
-    solution(park, routes);
-    //park.push_back("SOO");
-    //park.push_back("OXX");
-    //park.push_back("OOO");
+    park.push_back("SOO");
+    park.push_back("OXX");
+    park.push_back("OOO");
+
+    //routes.push_back("E 2");
+    //routes.push_back("S 3");
+    //routes.push_back("W 1");
 
     //park.push_back("OSO");
     //park.push_back("OOO");
-    //park.push_back("OxO");
-    //park.push_back("OOO");
+    //park.push_back("OXO");
+    //park.push_back("OOO");  
+
+
+    vector<int> result = solution(park, routes);
+
+    for (int i = 0; i < result.size(); i++) {
+        cout << result[i] << endl;
+    }
+
+
 
 
 }
