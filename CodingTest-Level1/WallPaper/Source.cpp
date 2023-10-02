@@ -16,17 +16,17 @@ vector<int> solution(vector<string> wallpaper) {
     for (int i = 0; i < wallpaper.size(); i++) {
         for (int j = 0; j < wallpaper[i].size(); j++) {
             if (wallpaper[i][j] == '#') {   // 파일칸
-                if (lux > j) {  // 가장 작은 시작점
-                    lux = j;
+                if (lux > i) {  // 가장 작은 시작점
+                    lux = i;
                 }
-                if (luy > i) {
-                    luy = i;
+                if (luy > j) {
+                    luy = j;
                 }
-                if (rdx < j) {  // 가장 큰 끝점
-                    rdx = j;
+                if (rdx < i) {  // 가장 큰 끝점
+                    rdx = i+1;
                 }
-                if (rdy < i) {
-                    rdy = i;
+                if (rdy < j) {
+                    rdy = j+1;
                 }
             }
         }
