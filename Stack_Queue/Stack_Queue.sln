@@ -5,6 +5,8 @@ VisualStudioVersion = 17.7.34009.444
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "HateSameNum", "HateSameNum\HateSameNum.vcxproj", "{E33FC460-7658-4DC0-8EDE-8B2CDA33453D}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Brackets", "Brackets\Brackets.vcxproj", "{9C09C6BD-47C9-459C-89C4-CB2820D9FD52}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -21,6 +23,14 @@ Global
 		{E33FC460-7658-4DC0-8EDE-8B2CDA33453D}.Release|x64.Build.0 = Release|x64
 		{E33FC460-7658-4DC0-8EDE-8B2CDA33453D}.Release|x86.ActiveCfg = Release|Win32
 		{E33FC460-7658-4DC0-8EDE-8B2CDA33453D}.Release|x86.Build.0 = Release|Win32
+		{9C09C6BD-47C9-459C-89C4-CB2820D9FD52}.Debug|x64.ActiveCfg = Debug|x64
+		{9C09C6BD-47C9-459C-89C4-CB2820D9FD52}.Debug|x64.Build.0 = Debug|x64
+		{9C09C6BD-47C9-459C-89C4-CB2820D9FD52}.Debug|x86.ActiveCfg = Debug|Win32
+		{9C09C6BD-47C9-459C-89C4-CB2820D9FD52}.Debug|x86.Build.0 = Debug|Win32
+		{9C09C6BD-47C9-459C-89C4-CB2820D9FD52}.Release|x64.ActiveCfg = Release|x64
+		{9C09C6BD-47C9-459C-89C4-CB2820D9FD52}.Release|x64.Build.0 = Release|x64
+		{9C09C6BD-47C9-459C-89C4-CB2820D9FD52}.Release|x86.ActiveCfg = Release|Win32
+		{9C09C6BD-47C9-459C-89C4-CB2820D9FD52}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
